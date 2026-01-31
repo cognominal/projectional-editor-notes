@@ -1,0 +1,50 @@
+# Glossary: Posh & Embedded Projectional Editing
+
+## Model
+
+The central, single source of truth representing the program's logic and data.
+It is a structured collection of nodes (the AST) that exists independently of
+how it is displayed. Changes to the model are immediately reflected in all its
+projections.
+
+## Embedding
+
+The practice of nesting one language or model directly inside another. In
+projectional editors, this is seamless because nodes from different languages
+can coexist in the same AST without syntax conflicts.
+
+## Posh, short for  Posh Projection
+
+A projection style where font styling (bolding, italics, colors, sizes, and
+weights) serves as the primary notation. Instead of using symbols like brackets
+or keywords, "Posh" uses visual weight to define scope and hierarchy.
+
+## Two-Level Embedding (Enhanced YAML)
+
+A specific implementation where a data-centric model (like YAML) acts as a host
+for a logic-level. This allows for interpolating variables directly into a
+structured data tree, merging static config with dynamic execution.
+
+## Abstract Syntax Tree (AST)
+
+The underlying data structure. In an embedded context, the AST becomes a
+heterogeneous tree where nodes may belong to different schemas (e.g., a YAML
+node containing a Python expression node).
+
+## Structural Editing
+
+Manipulating the AST directly. In "Posh" mode, the user interacts with styled
+text blocks; though it looks like "rich text" editing, every font change
+corresponds to a structural change in the model.
+
+## Persistence
+
+The underlying storage (XML/JSON). For two-level embedding, persistence must
+track which parts belong to the host (YAML) and which belong to the
+interpolated logic for proper variable scoping. Projectional Editor
+
+## Projectional Editor
+
+An IDE or editor where users manipulate the Abstract Syntax Tree (AST) directly
+via a projected view. Unlike text editors, there is no parsing of raw text; the
+UI renders the model based on defined rules.
