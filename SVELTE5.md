@@ -53,21 +53,35 @@ The Svelte 5 parser logic is located primarily within the
 
 The main entry point where Acorn is invoked and extended.
 
-* [**compiler/phases/1-parse/index.ts**](https://github.com/sveltejs/svelte/blob/main/packages/svelte/src/compiler/phases/1-parse/index.ts)
+* [**compiler/phases/1-parse/index.ts**][svelte-parse]
 
 ### Svelte-TypeScript Plugin
 
 Svelte's custom Acorn plugin for high-performance TS parsing.
 
-* [**acorn-typescript Repository**](https://github.com/sveltejs/acorn-typescript)
-* [**Plugin Implementation**](https://github.com/sveltejs/acorn-typescript/blob/main/src/index.js)
+* [**acorn-typescript Repository**][acorn-ts-repo]
+* [**Plugin Implementation**][acorn-ts-plugin]
 
 ### JavaScript Expression Parser
 
 Handles how Svelte scripts and expressions are processed via Acorn.
 
-* [**read_script.ts**](https://github.com/sveltejs/svelte/blob/main/packages/svelte/src/compiler/phases/1-parse/read/script.ts)
-* [**read_expression.ts**](https://github.com/sveltejs/svelte/blob/main/packages/svelte/src/compiler/phases/1-parse/read/expression.ts)
+* [**read_script.ts**][svelte-read-script]
+* [**read_expression.ts**][svelte-read-expr]
+
+[svelte-parse]:
+  https://github.com/sveltejs/svelte/blob/main/packages/svelte/src/
+  compiler/phases/1-parse/index.ts
+[acorn-ts-repo]:
+  https://github.com/sveltejs/acorn-typescript
+[acorn-ts-plugin]:
+  https://github.com/sveltejs/acorn-typescript/blob/main/src/index.js
+[svelte-read-script]:
+  https://github.com/sveltejs/svelte/blob/main/packages/svelte/src/
+  compiler/phases/1-parse/read/script.ts
+[svelte-read-expr]:
+  https://github.com/sveltejs/svelte/blob/main/packages/svelte/src/
+  compiler/phases/1-parse/read/expression.ts
 
 ---
 
@@ -80,3 +94,14 @@ Svelte chooses Acorn because it is:
     tokenizer and parser without a full fork.
 3. **Extensible**: Easily handles the `ecmaVersion: 'latest'`
     to stay current with JS standards.
+
+---
+
+## 5. Playground (svelte.dev) implementation notes
+
+- The core REPL code is published as the `@sveltejs/repl` package,
+  described as the guts of `https://svelte.dev/repl` extracted for reuse.
+- The svelte.dev team says the REPL was rewritten from scratch to be
+  typesafe and upgraded to CodeMirror 6.
+- The svelte.dev roadmap includes unifying the REPL and Examples page and
+  moving to a webcontainer-based REPL with a rollup fallback.

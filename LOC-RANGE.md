@@ -72,10 +72,10 @@ viewer, the positioning data would look like this:
 }
 ```
 
-## Notes on AST Projection and Ranges
+## Notes on AST/CST Projection and Ranges
 
 A projectional editor may present an AST in a layout that does not match
 the original source code used to build it.
 
-AST nodes typically exclude inter-token whitespace. As a result, the union
+The nodes of traditional AST typically exclude inter-token whitespace. As a result, the union
 of node ranges does not include all characters from the original source.

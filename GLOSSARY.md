@@ -7,11 +7,18 @@ It is a structured collection of nodes (the AST) that exists independently of
 how it is displayed. Changes to the model are immediately reflected in all its
 projections.
 
+## Structural token
+
+Before a computer builds a tree, it needs to break a long string of text
+into "meaningful chunks."
+These are tokens. While most tokens represent values (like x or 10), structural
+tokens are the characters that define the hierarchy and boundaries of the code.
+
 ## Embedding
 
 The practice of nesting one language or model directly inside another. In
 projectional editors, this is seamless because nodes from different languages
-can coexist in the same AST without syntax conflicts.
+can coexist in the same AST without syntax confliscts.
 
 ## Posh, short for  Posh Projection
 
@@ -30,6 +37,12 @@ structured data tree, merging static config with dynamic execution.
 The underlying data structure. In an embedded context, the AST becomes a
 heterogeneous tree where nodes may belong to different schemas (e.g., a YAML
 node containing a Python expression node).
+
+## Concrete Syntax Tree (CST)
+
+A Concrete Syntax Tree, also known as a Parse Tree, is a high-fidelity
+representation of the source code. It captures every single detail present
+in the source, including those structural tokens mentioned above.
 
 ## Structural Editing
 
